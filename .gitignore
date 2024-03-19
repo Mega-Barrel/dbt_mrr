@@ -1,0 +1,4 @@
+
+# credentials file
+credentials.json
+dbt_bigquery_creds.json
