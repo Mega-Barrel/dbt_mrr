@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: int_date_spine
+    description: Generate daily date spine for the period specified.
+    columns:
+      - name: date_day
+        description: Daily date between specified interval.
+
+  - name: int_revenue_daily
+    description: Intermediate model layer to apply data transformations and table JOINs.
+    columns:
+      - name: date_day
+        description: Daily date.
+      - name: invoice_id
+        description: unique invoice_id for every transaction.
+      - name: customer_id
+        description: customer_id associated for every transaction.
+      - name: daily_drr
+        description: daily revenue data for invoice_id.
