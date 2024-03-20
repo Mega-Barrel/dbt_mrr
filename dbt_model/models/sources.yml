@@ -1,0 +1,23 @@
+version: 2
+
+sources:
+  - name: public
+    schema: dbt_mrr
+    tables:
+      - name: invoice_item
+        identifier: invoice_item
+        columns:
+          - name: type
+          - name: period_end
+          - name: period_start
+          - name: amount
+          - name: currency
+          - name: _synced
+          - name: invoice_id
+          - name: id
+
+      - name: invoice
+        identifier: invoice
+        columns:
+          - name: string_field_0
+          - name: string_field_1
