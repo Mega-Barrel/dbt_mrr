@@ -1,3 +1,32 @@
+## Some Assumptions
+- Company level data is available in invoice table. Below contains the steps to replicate question 2 analysis.
+```
+    -- Every customer_id is mapped with company_name / company_id
+
+    -- When performing JOIN operation in `raw_daily_drr` CTE,
+        -- we can add/get company column.
+
+        -- Example
+        -- invoice.company_name
+    
+    -- Same can be added to `daily_spinned_revenue` CTE
+        -- Example
+        -- raw_daily_drr.company_name
+
+-- Sample Mart view
+-- Columns: 
+    -- date_day, company_name, 
+    -- invoice_id, customer_id, daily_revenue
+```
+
+- Regarding invoice table, containing extra 2 rows
+```
+-- string_field_0, string_field_1
+-- id, customer_id
+```
+To modify / skip the table rows, I used `row_number()` window_function to skip these records and renamed the column to **invoice_id** and **customer_id** respectively.
+
+
 ## Part 1 Deliverables
 GitHub Repository link - https://github.com/Mega-Barrel/dbt_mrr
 
