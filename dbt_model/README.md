@@ -22,3 +22,5 @@ Here are some tests to ensure MRR data is valid in terms of quality, freshness, 
 
 - Relationships Tests
   - Validate that all of the records in a child table have a corresponding record in a parent table for `referential integrity` check.
+
+**For the Staging layer, I have implemented 3 tests (stg__models.yml)**
