@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: daily_drr
+    description: Daily recurring revenue data on customer / invoice level.
+    columns:
+      - name: date_day
+        description: Daily date.
+      - name: invoice_id
+        description: unique invoice_id for every transaction.
+      - name: customer_id
+        description: customer_id associated for every transaction.
+      - name: daily_drr
+        description: Total daily revenue (in EURO).
+        tests:
+          - not_null
