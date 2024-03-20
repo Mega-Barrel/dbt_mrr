@@ -1,0 +1,39 @@
+version: 2
+
+models:
+  - name: stg_invoice_item
+    description: Invoice items raw data.
+    columns:
+      - name: invoice_item_type
+        description: Invoice item type
+        tests:
+          - accepted_values:
+              values: ['invoiceitem', 'subscription']
+      - name: period_end
+        description: Invoice line item end date. This invoice item pays for a period ending on this date.
+      - name: period_start
+        description: Invoice line item start date. This invoice item pays for a period starting on this date.
+      - name: invoice_item_amount
+        description: Invoice item amount
+      - name: currency
+        description: Currency of the invoice item amount
+      - name: last_synced_time
+        description: Timestamp of when the raw data was lasted synced in the database
+      - name: invoice_id
+        description: Foreign key. ID of an invoice
+        tests: 
+          - unique
+      - name: id
+        description: Primary key. ID of an invoice item
+
+  - name: stg_invoice
+    description: Raw Invoice data. Contains Customer ID (string_field_1) and Invoice ID ((string_field_0)).
+    columns:
+      - name: invoice_id
+        description: invoice_id ( PK ) for Invoice table.
+        tests:
+          - relationships:
+              to: ref('stg_invoice_item')
+              field: invoice_id
+      - name: customer_id
+        description: customer_id associated with each invoice.
