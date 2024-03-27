@@ -9,7 +9,7 @@ WITH currency_conversion AS (
         period_start,
         invoice_item_amount,
         currency,
-        {{ to_euro('currency', 'invoice_item_amount') }} AS amount_euro,
+        {{ currency_conversion('currency', 'invoice_item_amount') }} AS amount_euro,
         invoice_id,
         id
     FROM
