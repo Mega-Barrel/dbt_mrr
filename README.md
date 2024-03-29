@@ -16,4 +16,4 @@ Try running the following commands:
 - dbt run ( to execute the dbt models )
 
 
-**Note:** Please head over to dbt_model/README.md file for project deliverables 😀
+**Note:** Please head over to dbt_model/README.md file for project overview 😀
